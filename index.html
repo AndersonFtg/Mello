@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Cadastro de Local</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' type='text/css' href='./css/bootstrap.min.css'>
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.3/firebase-firestore.js"></script>
+    <script type="text/javascript" src="./script.js"> </script>
+
+</head>
+<body  class="bg-light text-dark">
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <h2 style="margin: 10px 0px 20px 80px"> Cadastro de Local </h2> <br>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <label for="id">ID do Local: </label>
+                <input type="text" name="id" id="id" class="from-control">
+                <button type="button" class="btn btn-outline-primary" onclick="excluir()" > Excluir </button> <br> <br>
+
+                <label for="nome">Nome: </label> <br>
+                <input type="text" name="nome" id="nome" class="form-control"> <br>
+
+                <label for="lat">Latitude: </label><br>
+                <input type="text" name="lat" id="lat" class="form-control"> <br>
+
+                <label for="long">Longitude: </label> <br>
+                <input type="text" name="long" id="long" class="form-control"> <br>
+            </div>
+        </div>
+
+        <div class="col-md-6 offset-3 text-center">
+            <div id="mensagem"> </div> 
+        </div>
+
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-5" style="padding: 0px 0px 0px 150px">
+                <button type="button" class="btn btn-outline-primary" onclick="cadastrar();"> Incluir </button>
+                
+                <button type="button" class="btn btn-outline-primary" onclick="consultar();"> Consultar </button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" title="Informe o ID para atualizar!" onclick="alterar();"> Alterar </button>
+            </div>
+        </div> <br> <br>
+        
+        <div class="row justify-content-center offset-3" style="width: 650px;">
+            <table id="locais" cellspacing="12" class="table table-bordered table-hover">
+                <tbody>
+                    <thead id="nomeColunas">
+                        <tr>
+                            <th id="colID"> </th>
+                            <th id="colNome"> </th>
+                            <th id="colLat"> </th>
+                            <th id="colLong"> </th>
+                        </tr>
+                    </thead>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    
+</body>
+</html>
